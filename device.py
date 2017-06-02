@@ -4,6 +4,8 @@ from time import sleep
 
 """
 Class for maintaining the connection to the CAN device.
+
+Note: This is a dumb class. It will only send and receive messages. Everything else (Like ACKing packages) needs to be done by the components using this class.
 """
 class Device(object):
 
