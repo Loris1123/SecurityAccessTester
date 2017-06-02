@@ -6,5 +6,5 @@ SecurityAccessTester is a modular framework to test different Security Access Me
 The goal is to implement multiple algorithms for the Seed-Key mechanismn of KWP2000. Each algorithm will executed against a connected device.
 
 ## Dependencies
- - python-can (https://github.com/hardbyte/python-can)  
-   SocketCAN for Python
+SocketCAN for Python
+ - python-can (https://github.com/hardbyte/python-can) 
