@@ -7,7 +7,7 @@ Class for maintaining the connection to the CAN device.
 """
 class Device(object):
 
-    def __init__(self, bus):
+    def __init__(self, bus, reset):
         self.bus = can.interface.Bus(channel=bus, bustype='socketcan_native')
         self.buffered_messages = []
         self.reading = True
@@ -15,6 +15,7 @@ class Device(object):
         # Start read thread
         self.thread = Thread(target=self.read)
         self.thread.start()
+        self.resetalgo = reset
 
     """
     Opens a channel and starts a diagnostic session.
@@ -52,3 +53,9 @@ class Device(object):
             if len(msg.data) > 1:
                 self.buffered_messages.insert(0, msg)
                 # Else ACK(B*) or A*
+
+    """
+    Invokes the reset algorithm specified in constructor
+    """
+    def reset(self):
+        self.resetalgo.reset()
