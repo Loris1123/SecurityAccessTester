@@ -12,7 +12,7 @@ def start(device):
         device.open_connection()
         brute_force(device)
         device.reset()
-
+        
 def brute_force(device):
     device.send(0x32E, [0x11, 0x00, 0x02, 0x27, 0x03])
     seed1 = device.next_message().data
