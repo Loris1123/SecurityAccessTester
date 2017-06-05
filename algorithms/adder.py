@@ -1,6 +1,10 @@
 """
 Adds <number> to the seed and sends it as keys
+
+Add 70 000 to the seed came from this (http://nefariousmotorsports.com/forum/index.php?topic=4983.0) forum
 """
+
+
 
 def start(device, number):
     device.open_connection()
